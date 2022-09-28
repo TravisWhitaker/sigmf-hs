@@ -1,0 +1,53 @@
+cabal-version:       2.2
+name:                sigmf
+version:             0.1.0.0
+synopsis:            Signal Metadata Format Specification (SigMF)
+description:
+    .
+    This package provides data types and
+    <https://hackage.haskell.org/package/aeson aeson> instances for the
+    <https://github.com/gnuradio/SigMF SigMF> signal metadata interchange
+    specfication. The instances follow a strict interpretation of the SigMF
+    standards document. There are a handfull of cases where the instances are
+    more lenient than the standard; these are noted in the documentation.
+    .
+    The following SigMF extensions are supported:
+    .
+      - <https://github.com/gnuradio/SigMF/blob/sigmf-v1.x/extensions/spatial.sigmf-ext.md spatial>
+
+homepage:            https://github.com/TravisWhitaker/sigmf-hs
+bug-reports:         https://github.com/TravisWhitaker/sigmf-hs/issues
+license:             MIT
+license-file:        LICENSE
+author:              Travis Whitaker
+maintainer:          pi.boy.travis@gmail.com
+copyright:           Travis Whitaker 2022
+category:            Data
+extra-source-files:  CHANGELOG.md
+
+library
+  exposed-modules:     Data.SigMF
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >= 4.12.0.0 && < 4.18
+                     , aeson
+                     , attoparsec
+                     , bytestring
+                     , cryptonite
+                     , deepseq
+                     , filepath
+                     , linear
+                     , memory
+                     , scientific
+                     , text
+                     , time
+                     , vector
+                     , unordered-containers
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+                       -Widentities
+                       -Wredundant-constraints
+                       -Wcompat
+                       -Wno-type-defaults
+                       -Wincomplete-record-updates
